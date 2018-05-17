@@ -33,8 +33,9 @@ if __name__ == "__main__":
 {'ans': 21, 'self': Geeks() is returned}
 {'ans': 10, 'self': Geeks() is returned}
 {'num1': 20, 'num2': 'this is returned'}
+'''
+vars( x ) --> gives you access to the x.__dict__() method of the object. The __dict__ method of classes
+creates a dictionary of all class attributes
 
-#vars( x ) --> gives you access to the x.__dict__() method of the object. The __dict__ method of classes
-#creates a dictionary of all class attributes
-
-#without an argument, it gives you a dictionary of all avaialable variables within your current scope 
+without an argument, it gives you a dictionary of all avaialable variables within your current scope 
+'''
