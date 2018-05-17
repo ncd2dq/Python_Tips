@@ -1,0 +1,23 @@
+'''
+All classes have dictionaries of their attributes:
+class Person(object):
+def __init__(self):
+self.name = 'Nick'
+self.birthday = '1993-02-16'
+
+me = Person()
+me.__dict__() --> {name: 'Nick', birthday: '1993-02-16'}
+
+to slightly speed up code that uses a lot of classes and free up some memory, you can define what attributes your class
+will have so. See below:
+'''
+
+class Foo(object):
+    __slots__ = ('spam',)
+    def __init__(self):
+        self.spam = 'eggs'
+
+class Bar(object):
+     def __init__(self):
+         self.spam = 'eggs'
+
