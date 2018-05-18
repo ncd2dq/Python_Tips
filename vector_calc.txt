@@ -1,8 +1,10 @@
 #Polar coordinates of a circle
 x = r * cos(theta)
 y = r * sin(theta)
+
 radians * 180 / pi = degrees
+degrees * pi / 180 = radians
 
 #Rotating points about the origin
-x = x * cos(theta) + y * sin(theta)
-y = y * cos(theta) - x * sin(theta)
+x = x * cos(theta) - y * sin(theta)
+y = x * sin(theta) + y * cos(theta)
