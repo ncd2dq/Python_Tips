@@ -22,3 +22,11 @@ This can be 180 at most as it's the smallest angle between them
 
 # Scalar projection (the amount of vector A that is along the vector B)
 # how much of A's components are in the direction of B (90* would be 0)
+
+#Matrix Multiplication
+rows "dot" the columns
+(rows, cols) x (rows, cols)
+Cols of first must equal rows of second
+Resultant has rows of first and cols of second
+[a  b] [x]                                  [ax + by]
+[c  d] [y] --> (2,2) x (2,1) -- > (2,1) --> [cx + dy] 
