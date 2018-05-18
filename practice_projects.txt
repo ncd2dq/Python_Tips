@@ -1,0 +1,4 @@
+1) Image recognition with homegrown neural network
+2) Toy neural network library
+3) Chat server
+4) Neuro-evolutionary game (flappy bird AI)
