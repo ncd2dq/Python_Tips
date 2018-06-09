@@ -3,3 +3,6 @@
 3) Chat server
 4) Neuro-evolutionary game (flappy bird AI)
 5) Recreate numpy (matrix multiplication, zeros/ones, vstack/hstack
+
+os.walk()
+iterates through all paths 
