@@ -17,6 +17,10 @@ group by day
 '''
 
 
+# For grouping by
+# df.groupby(['column1', 'column2']).sum()
+#
+
 # Output is a pandas DF
 df = pd.read_sql_query(query, connection)
 
