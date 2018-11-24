@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import requests
+import matplotlib.pyplot as plt
 
 # https://www.usclimatedata.com/climate/united-states/us
 
@@ -71,8 +72,10 @@ def get_state_dict():
         
     return states_dict
 
-
 def get_data_from_state_page(state_href):
+    '''
+    Returns a list of dictionries for each month for a given state
+    '''
     base_url = 'https://www.usclimatedata.com'
     url = base_url + state_href
     
@@ -106,7 +109,30 @@ def get_data_from_state_page(state_href):
     for index, item in enumerate(source_dicts):
         source_dicts[index] = eval(item)
 
-    print(source_dicts)
+    return source_dicts
 
-get_data_from_state_page('/climate/hawaii/united-states/3181')
+
+def create_data_frame_dict():
+    data_frame_dict = {}
+    states_dict = get_state_dict()
+    # {(state, month): Low, High, Precipitation  }
+    for state, href in states_dict.items():
+        source_dict = get_data_from_state_page(href)
+
+        for sub_dict in source_dict:
+            data_frame_dict[(state, sub_dict['Month'])] = [
+                                                        sub_dict['Low'],
+                                                       sub_dict['High'],
+                                                       sub_dict['Precipitation']
+                                                       ]
+    return data_frame_dict
+
+dframe_dict = create_data_frame_dict()
+
+df = pd.DataFrame.from_dict(dframe_dict, orient='index', columns=['Low', 'High', 'Precipitation'])
+
+        
+        
+
+
 
