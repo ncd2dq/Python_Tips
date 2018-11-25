@@ -120,19 +120,20 @@ def create_data_frame_dict():
         source_dict = get_data_from_state_page(href)
 
         for sub_dict in source_dict:
-            data_frame_dict[(state, sub_dict['Month'])] = [
+            data_frame_dict[ (state, sub_dict['Month']) ] = {'Low':
                                                         sub_dict['Low'],
+                                                             'High':
                                                        sub_dict['High'],
+                                                             'Precipitation':
                                                        sub_dict['Precipitation']
-                                                       ]
+                                                       }
     return data_frame_dict
 
 dframe_dict = create_data_frame_dict()
-
 df = pd.DataFrame.from_dict(dframe_dict, orient='index', columns=['Low', 'High', 'Precipitation'])
-
-        
-        
-
+df.index.names = ['State', 'Month']
+#https://stackoverflow.com/questions/53219207/dataframe-from-dict-fails-to-change-dict-with-tuple-keys-into-multi-index-datafr
+print(df.head())
+print(df.describe())
 
 
